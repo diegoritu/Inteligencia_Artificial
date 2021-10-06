@@ -1,0 +1,20 @@
+¡SOLO CORRER EL PASO 1 SI SE MODIFICA EL DOCKERFILE O SI ES LA PRIMERA VEZ QUE LO CORREN!
+
+1- docker build . -t ia-notebook 
+
+Correr el paso 2 cada vez que se haga un pull en el repo.
+
+2- docker run -it -p 8888:8888 ia-notebook
+
+IMPORTANTE:
+
+Antes de intentar nada, asegurarse de tener instalado VSCode con las siguientes extensiones:
+	- Jupyter.
+	- Docker.
+	- Remote Development.
+
+Además, es necesario tener instalado Docker Desktop.
+
+Una vez que el docker esté levantado (paso 2), abrir VSCode, ir al panel "Explorador remoto"
+(que está abajo de "Extensiones"), y conectarse al container "ia-notebook".
+Una vez conectado, ir al explorador y abrir la notebook en home/jupyter.

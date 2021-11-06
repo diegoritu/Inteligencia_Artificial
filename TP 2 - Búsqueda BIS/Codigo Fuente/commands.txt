@@ -11,6 +11,9 @@ py pacman.py -l mediumMaze -p SearchAgent -a fn=bfs
 py pacman.py -l bigMaze -p SearchAgent -a fn=bfs -z .5
 py eightpuzzle.py
 python3 pacman.py -l mediumMaze -p SearchAgent -a fn=ucs
+python3 pacman.py -l mediumMaze -p SearchAgent -a fn=dfs
+python3 pacman.py -l mediumMaze -p SearchAgent -a fn=bfs
+python3 pacman.py -l mediumMaze -p SearchAgent -a fn=astar
 py pacman.py -l mediumDottedMaze -p StayEastSearchAgent
 py pacman.py -l mediumScaryMaze -p StayWestSearchAgent
 py pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic 

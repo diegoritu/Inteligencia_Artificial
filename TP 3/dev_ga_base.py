@@ -447,11 +447,12 @@ class Riddle:
             #print(self.population[SIZE_POBLACION-1].decode())
             # condiciones de corte
 
+            
             matrizKeyValuesMejorScore = [[0 for x in range(5)] for x in range(5)] 
             #Se llena matriz de key values.
             for i in range(0, 5):
                 for j in range(0, 5):
-                    matrizKeyValuesMejorScore[i][j] = self.population[0][j*5+i]
+                    matrizKeyValuesMejorScore[i][j] = self.population[0].chromosome[j*5+i]
 
 
             #Si el de mejor score usa redis y programa en Java
@@ -459,8 +460,9 @@ class Riddle:
 
             #Si el score del mejor es de al menos 11 y en ese caso el hacker programa en python
             i2 = matrizKeyValuesMejorScore[PROFESION].index(list(profession.keys())[1])
-
+            
             if counter >= MAXIMO_ITERACIONES or (matrizKeyValuesMejorScore[LENGUAJE][i] == list(languaje.keys())[2]) or (self.population[0].score > 11 and matrizKeyValuesMejorScore[LENGUAJE][i2] == list(languaje.keys())[0]):
+            #if counter >= MAXIMO_ITERACIONES:
                 print("termina por condicion")
                 break_condition = True
             
@@ -530,6 +532,7 @@ class Riddle:
         #Se entrenan los hijos, y se los retorna
         hijo1.fitness_function()
         hijo2.fitness_function()
+
         return hijo1, hijo2
 
 start = time.time()
